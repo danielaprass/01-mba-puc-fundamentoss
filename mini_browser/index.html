@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Browser Experimental</title>
+</head>
+<body>
+    
+<script>
+    // [ENTRADA]
+
+    // Objetos: representa coisas com múltiplos atributos
+    var aba1 = {
+        titulo: 'Google',
+        url: 'https://www.google.com/'
+    };
+
+    var aba2 = {
+        titulo: 'Instagram',
+        url: 'https://www.instagram.com/'
+    };
+
+    // Arrays: listas de coisas
+    const abas = [
+        aba1,
+        aba2
+    ]
+
+    //[PROCESSAMENTO]
+    for(aba of abas) {
+        console.log(aba.titulo);
+        // [OUTPUT]
+        var valorAtualDoHTML = document.body.innerHTML;
+        document.body.innerHTML = valorAtualDoHTML + `<li><a href="${aba.url}">${aba.titulo}<a/></li>`;
+    }
+
+</script>
+
+</body>
+</html>

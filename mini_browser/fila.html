@@ -1,0 +1,43 @@
+<!-- Simulação do controle de requests do navegador -->
+
+<script>
+
+    console.log('[Fila/Queue]');
+
+    // =============================
+    // Receita para criar filas
+    // =============================
+    // - enqueue: enfileirar
+    // - dequeue: desenfileirar
+    class Queue {   //  Class: receita para criar objetos
+        constructor() {
+            this.data = [];
+        }
+
+        print() {
+            console.log(this.data);
+        }
+
+        enqueue(item) {
+            this.data.push(item);
+        }
+
+        dequeue() {
+            this.data.shift();
+        }
+    }
+
+    var requests = new Queue();
+    // Open Closed
+    // Open: Aberto pra extensão
+    // Closed: Fechado pra modificação
+    requests.enqueue('scripts.js');
+    requests.print();
+    requests.dequeue();
+    requests.enqueue('style.css');
+    requests.enqueue('imagem.png');
+    requests.enqueue('doguinho.png');
+    requests.print();
+
+
+</script>

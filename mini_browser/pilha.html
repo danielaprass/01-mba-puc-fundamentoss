@@ -1,0 +1,44 @@
+<!-- Simulação do histórico do navegador -->
+
+<script>
+
+    //LIFO - Stack
+    console.log('Pilha / Stack');
+
+    class BrowserHistoryStack {
+        constructor() {
+            this.cursor = 0;
+            this.data = [];
+        }
+
+        push(item) {
+            this.cursor = this.cursor + 1;
+            this.data.push(item);
+        }
+
+        back() { // pop()
+            // this.data.pop()
+            this.cursor = this.cursor - 1;
+        }
+
+        clear() {
+            this.data = [];
+        }
+
+        print() {
+            console.log('Cursor',this.cursor);
+            console.log('Itens atuais',this.data);
+        }
+    }
+
+    var hist = new BrowserHistoryStack();
+    
+    hist.push('https://google.com');
+    hist.push('https://youtube.com');
+    hist.push('https://facebook.com');
+
+    hist.print();
+    hist.back();
+    hist.print();
+
+</script>
